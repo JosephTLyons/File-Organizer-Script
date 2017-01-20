@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# TODO - use if-statements to make check if folder already exists
+# Add support for other files and formats
+
 # Make folders for documents
 mkdir Documents
 mkdir Documents/TXT
@@ -17,7 +20,7 @@ mkdir Images/PNG
 # Make folders for videos
 mkdir Videos
 mkdir Videos/MPEG
-mkdir Videos/
+# mkdir Videos/ OTHER TYPES
 
 mkdir Miscellaneous
 
