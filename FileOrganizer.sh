@@ -1,17 +1,20 @@
 #!/bin/bash
 
+# Make folders for documents
 mkdir Documents
 mkdir Documents/TXT
 mkdir Documents/RTF
 mkdir Documents/DOC
 mkdir Documents/HTML
 
+# Make folders for images
 mkdir Images
 mkdir Images/JPEG
 mkdir Images/JPG
 mkdir Images/GIF
 mkdir Images/PNG
 
+# Make folders for videos
 mkdir Videos
 mkdir Videos/MPEG
 mkdir Videos/
