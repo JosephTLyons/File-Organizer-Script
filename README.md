@@ -5,7 +5,7 @@ Currently supported file types:
 
 Audio: AIFF, FLAC, M4A, MP3, WAVE
 
-Documents: DOC, DOCX, HTML, PDF, PowerPoint, RTF, TXT
+Documents: DOC, DOCX, Excel, HTML, PDF, PowerPoint, RTF, TXT
 
 Images: GIF, JPEG, JPG, Pixelmator, PNG
 

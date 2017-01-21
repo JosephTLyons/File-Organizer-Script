@@ -73,6 +73,7 @@ fi
 mkdir Documents
 mkdir Documents/DOC
 mkdir Documents/DOCX
+mkdir Documents/Excel
 mkdir Documents/HTML
 mkdir Documents/PDF
 mkdir Documents/PowerPoint
@@ -82,6 +83,7 @@ mkdir Documents/TXT
 # Move all docs to documents folder
 mv *.doc Documents/DOC
 mv *.docx Documents/DOCX
+mv *.xlsx Documents/Excel
 mv *.html Documents/HTML
 mv *.pdf Documents/PDF
 mv *.pptx Documents/PowerPoint
@@ -98,6 +100,11 @@ fi
 if [ "$(ls Documents/DOCX 2> /dev/null)" == "" ];
 then
     rmdir Documents/DOCX
+fi
+
+if [ "$(ls Documents/Excel 2> /dev/null)" == "" ];
+then
+    rmdir Documents/Excel
 fi
 
 if [ "$(ls Documents/HTML 2> /dev/null)" == "" ];
