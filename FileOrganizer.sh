@@ -75,6 +75,7 @@ mkdir Documents/DOC
 mkdir Documents/DOCX
 mkdir Documents/HTML
 mkdir Documents/PDF
+mkdir Documents/PowerPoint
 mkdir Documents/RTF
 mkdir Documents/TXT
 
@@ -83,6 +84,7 @@ mv *.doc Documents/DOC
 mv *.docx Documents/DOCX
 mv *.html Documents/HTML
 mv *.pdf Documents/PDF
+mv *.pptx Documents/PowerPoint
 mv *.rtf Documents/RTF
 mv *.txt Documents/TXT
 
@@ -106,6 +108,11 @@ fi
 if [ "$(ls Documents/PDF 2> /dev/null)" == "" ];
 then
     rmdir Documents/PDF
+fi
+
+if [ "$(ls Documents/PowerPoint 2> /dev/null)" == "" ];
+then
+    rmdir Documents/PowerPoint
 fi
 
 if [ "$(ls Documents/RTF 2> /dev/null)" == "" ];
@@ -137,6 +144,7 @@ mkdir Images/PNG
 mv *.gif Images/GIF
 mv *.jpeg Images/JPEG
 mv *.jpg Images/JPG
+mv *.JPG Images/JPG # sometimes jpg is capitalized
 mv *.pxm Images/Pixelmator
 mv *.png Images/PNG
 
@@ -228,7 +236,21 @@ then
     rmdir Videos
 fi
 
-########################################## ZIP ##########################################
+########################################## Applications ##########################################
+
+# Make folder for Applications
+mkdir Applications
+
+# Move all APP files to folder
+mv *.app Applications
+
+# Delete APP folder
+if [ "$(ls Applications 2> /dev/null)" == "" ];
+then
+    rmdir Applications
+fi
+
+########################################## Zip ##########################################
 
 # Make folder for zip
 mkdir Zip
@@ -240,6 +262,20 @@ mv *.zip Zip
 if [ "$(ls Zip 2> /dev/null)" == "" ];
 then
     rmdir Zip
+fi
+
+########################################## DMG ##########################################
+
+# Make folder for DMG
+mkdir DMG
+
+# Move all DMG files to folder
+mv *.dmg DMG
+
+# Delete DMG folder
+if [ "$(ls DMG 2> /dev/null)" == "" ];
+then
+    rmdir DMG
 fi
 
 ########################################## MISCELLANEOUS ##########################################
