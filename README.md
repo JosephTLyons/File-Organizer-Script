@@ -3,8 +3,6 @@ A small script that I wrote awhile ago and recently started adding to again.  Pl
 
 Currently supported file types:
 
-Applications
-
 Audio: AIFF, FLAC, M4A, MP3, WAVE
 
 Documents: DOC, DOCX, HTML, PDF, PowerPoint, RTF, TXT
@@ -12,5 +10,9 @@ Documents: DOC, DOCX, HTML, PDF, PowerPoint, RTF, TXT
 Images: GIF, JPEG, JPG, Pixelmator, PNG
 
 Videos: AVI, FLV, MP4, MPEG, MOV, WMV
+
+Applications
+
+DMG
 
 Zip

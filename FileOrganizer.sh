@@ -250,20 +250,6 @@ then
     rmdir Applications
 fi
 
-########################################## Zip ##########################################
-
-# Make folder for zip
-mkdir Zip
-
-# Move all zip files to folder
-mv *.zip Zip
-
-# Delete zip folder
-if [ "$(ls Zip 2> /dev/null)" == "" ];
-then
-    rmdir Zip
-fi
-
 ########################################## DMG ##########################################
 
 # Make folder for DMG
@@ -276,6 +262,20 @@ mv *.dmg DMG
 if [ "$(ls DMG 2> /dev/null)" == "" ];
 then
     rmdir DMG
+fi
+
+########################################## Zip ##########################################
+
+# Make folder for zip
+mkdir Zip
+
+# Move all zip files to folder
+mv *.zip Zip
+
+# Delete zip folder
+if [ "$(ls Zip 2> /dev/null)" == "" ];
+then
+    rmdir Zip
 fi
 
 ########################################## MISCELLANEOUS ##########################################
