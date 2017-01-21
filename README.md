@@ -6,6 +6,7 @@ Currently supported file types:
 Audio:
 -AIFF
 -FLAC
+-M4A
 -MP3
 -WAVE
 

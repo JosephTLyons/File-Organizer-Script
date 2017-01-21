@@ -2,9 +2,21 @@
 
 # Add support for other files and formats
 # Figure out how to move all rest of files to MISC without moving the script
-# Figure out why folders are deleted, unless they have an item stored at some point
 # Figure out how to copy files from existing folders out and make them empty
 # so they can be sorted, and they will be deleted in the end
+
+## Loop through existing folders, mv items out of them and into the working directory
+#for directories in */ ;
+#do
+#    if [ -d $directories ];
+#    then
+#        echo $directories
+#    fi
+#done
+#
+#rmdir *
+#
+## Delete all now empty directories
 
 ########################################## AUDIO ##########################################
 
@@ -12,12 +24,14 @@
 mkdir Audio
 mkdir Audio/AIFF
 mkdir Audio/FLAC
+mkdir Audio/M4A
 mkdir Audio/MP3
 mkdir Audio/WAVE
 
 # Move all audio files to audio folder
 mv *.aiff Audio/AIFF
 mv *.flac Audio/FLAC
+mv *.m4a Audio/M4A
 mv *.mp3 Audio/MP3
 mv *.wav Audio/WAVE
 
@@ -31,6 +45,11 @@ fi
 if [ "$(ls Audio/FLAC 2> /dev/null)" == "" ];
 then
     rmdir Audio/FLAC
+fi
+
+if [ "$(ls Audio/M4A 2> /dev/null)" == "" ];
+then
+    rmdir Audio/M4A
 fi
 
 if [ "$(ls Audio/MP3 2> /dev/null)" == "" ];
@@ -225,14 +244,17 @@ fi
 
 ########################################## MISCELLANEOUS ##########################################
 
-# Make folder for Miscellaneous
-mkdir Miscellaneous
-
-# Delete Miscellaneous folder
-if [ "$(ls Miscellaneous 2> /dev/null)" == "" ];
-then
-    rmdir Miscellaneous
-fi
-
-# Move rest of items to Miscellaneous Folder
-#mv *.* Miscellaneous
+## Make folder for Miscellaneous
+#mkdir Miscellaneous
+#
+### Move rest of items to Miscellaneous Folder
+#if [ ! "FileOrganizer.sh" ];
+#then
+#    mv *.* Miscellaneous
+#fi
+#
+## Delete Miscellaneous folder
+#if [ "$(ls Miscellaneous 2> /dev/null)" == "" ];
+#then
+#    rmdir Miscellaneous
+#fi
