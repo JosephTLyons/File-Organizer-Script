@@ -104,12 +104,14 @@ mkdir Images
 mkdir Images/GIF
 mkdir Images/JPEG
 mkdir Images/JPG
+mkdir Images/Pixelmator
 mkdir Images/PNG
 
 # Move all Images to folder - Split up files into specific file extension folders?
 mv *.gif Images/GIF
 mv *.jpeg Images/JPEG
 mv *.jpg Images/JPG
+mv *.pxm Images/Pixelmator
 mv *.png Images/PNG
 
 # Delete any empty folders related to images folder - delete parent folder last
@@ -127,6 +129,11 @@ fi
 if [ "$(ls Images/JPG 2> /dev/null)" == "" ];
 then
     rmdir Images/JPG
+fi
+
+if [ "$(ls Images/Pixelmator 2> /dev/null)" == "" ];
+then
+    rmdir Images/Pixelmator
 fi
 
 if [ "$(ls Images/PNG 2> /dev/null)" == "" ];
