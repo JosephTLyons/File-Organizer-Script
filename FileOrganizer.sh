@@ -4,6 +4,15 @@
 # Add support for other files and formats
 # Use if statements before attemping to move anything - make sure they exist?
 
+# Make folders for audio
+mkdir Audio
+mkdir Audio/MP3
+mkdir Audio/WAVE
+
+# Move all audio files to audio folder
+mv *.mp3 Audio/MP3
+mv *.wav Audio/WAVE
+
 # Make folders for documents
 mkdir Documents
 mkdir Documents/DOC
@@ -12,7 +21,7 @@ mkdir Documents/HTML
 mkdir Documents/RTF
 mkdir Documents/TXT
 
-# Move all docs to Documents Folder
+# Move all docs to documents folder
 mv *.doc Documents/DOC
 mv *.docx Documents/DOCX
 mv *.html Documents/HTML
@@ -53,7 +62,7 @@ mv *.mov Videos/MOV
 mv *.wmv Videos/WMV
 
 # misc
-mkdir Miscellaneous
+#mkdir Miscellaneous
 
 # Move rest of items to Miscellaneous Folder
 #mv *.* Miscellaneous
