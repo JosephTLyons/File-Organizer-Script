@@ -3,7 +3,10 @@
 # Add support for other files and formats
 # Figure out how to move all rest of files to MISC without moving the script
 # Figure out why folders are deleted, unless they have an item stored at some point
-# Figure out how to copy files from existing folders out and make them empty, so they can be sorted, and they will be deleted in the end
+# Figure out how to copy files from existing folders out and make them empty
+# so they can be sorted, and they will be deleted in the end
+
+########################################## AUDIO ##########################################
 
 # Make folders for audio
 mkdir Audio
@@ -44,6 +47,8 @@ if [ "$(ls Audio 2> /dev/null)" == "" ];
 then
     rmdir Audio
 fi
+
+########################################## DOCUMENTS ##########################################
 
 # Make folders for documents
 mkdir Documents
@@ -92,6 +97,8 @@ then
     rmdir Documents
 fi
 
+########################################## IMAGES ##########################################
+
 # Make folders for images
 mkdir Images
 mkdir Images/GIF
@@ -131,6 +138,8 @@ if [ "$(ls Images 2> /dev/null)" == "" ];
 then
     rmdir Images
 fi
+
+########################################## VIDEOS ##########################################
 
 # Make folders for videos
 mkdir Videos
@@ -185,6 +194,22 @@ if [ "$(ls Videos 2> /dev/null)" == "" ];
 then
     rmdir Videos
 fi
+
+########################################## ZIP ##########################################
+
+# Make folder for zip
+mkdir Zip
+
+# Move all zip files to folder
+mv *.zip Zip
+
+# Delete zip folder
+if [ "$(ls Zip 2> /dev/null)" == "" ];
+then
+    rmdir Zip
+fi
+
+########################################## MISCELLANEOUS ##########################################
 
 # Make folder for Miscellaneous
 mkdir Miscellaneous
