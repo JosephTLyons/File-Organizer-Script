@@ -1,32 +1,46 @@
 #!/bin/bash
 
-# TODO - use if-statements to make check if folder already exists
 # Add support for other files and formats
-# Use if statements before attemping to move anything - make sure they exist?
 # Figure out how to move all rest of files to MISC without moving the script
+# Figure out why folders are deleted, unless they have an item stored at some point
+# Figure out how to copy files from existing folders out and make them empty, so they can be sorted, and they will be deleted in the end
 
 # Make folders for audio
 mkdir Audio
+mkdir Audio/AIFF
+mkdir Audio/FLAC
 mkdir Audio/MP3
 mkdir Audio/WAVE
 
 # Move all audio files to audio folder
+mv *.aiff Audio/AIFF
+mv *.flac Audio/FLAC
 mv *.mp3 Audio/MP3
 mv *.wav Audio/WAVE
 
 # Delete any empty folders related to audio folder - delete parent folder last
 # Because it will only ever be empty at the end of deleting all other subfolders
-if [ "$(ls -A Audio/MP3 2> /dev/null)" == "" ];
+if [ "$(ls Audio/AIFF 2> /dev/null)" == "" ];
+then
+    rmdir Audio/AIFF
+fi
+
+if [ "$(ls Audio/FLAC 2> /dev/null)" == "" ];
+then
+    rmdir Audio/FLAC
+fi
+
+if [ "$(ls Audio/MP3 2> /dev/null)" == "" ];
 then
     rmdir Audio/MP3
 fi
 
-if [ "$(ls -A Audio/WAVE 2> /dev/null)" == "" ];
+if [ "$(ls Audio/WAVE 2> /dev/null)" == "" ];
 then
     rmdir Audio/WAVE
 fi
 
-if [ "$(ls -A Audio 2> /dev/null)" == "" ];
+if [ "$(ls Audio 2> /dev/null)" == "" ];
 then
     rmdir Audio
 fi
@@ -48,32 +62,32 @@ mv *.txt Documents/TXT
 
 # Delete any empty folders related to documents folder - delete parent folder last
 # Because it will only ever be empty at the end of deleting all other subfolders
-if [ "$(ls -A Documents/DOC 2> /dev/null)" == "" ];
+if [ "$(ls Documents/DOC 2> /dev/null)" == "" ];
 then
     rmdir Documents/DOC
 fi
 
-if [ "$(ls -A Documents/DOCX 2> /dev/null)" == "" ];
+if [ "$(ls Documents/DOCX 2> /dev/null)" == "" ];
 then
     rmdir Documents/DOCX
 fi
 
-if [ "$(ls -A Documents/HTML 2> /dev/null)" == "" ];
+if [ "$(ls Documents/HTML 2> /dev/null)" == "" ];
 then
     rmdir Documents/HTML
 fi
 
-if [ "$(ls -A Documents/RTF 2> /dev/null)" == "" ];
+if [ "$(ls Documents/RTF 2> /dev/null)" == "" ];
 then
     rmdir Documents/RTF
 fi
 
-if [ "$(ls -A Documents/TXT 2> /dev/null)" == "" ];
+if [ "$(ls Documents/TXT 2> /dev/null)" == "" ];
 then
     rmdir Documents/TXT
 fi
 
-if [ "$(ls -A Documents 2> /dev/null)" == "" ];
+if [ "$(ls Documents 2> /dev/null)" == "" ];
 then
     rmdir Documents
 fi
@@ -93,27 +107,27 @@ mv *.png Images/PNG
 
 # Delete any empty folders related to images folder - delete parent folder last
 # Because it will only ever be empty at the end of deleting all other subfolders
-if [ "$(ls -A Images/GIF 2> /dev/null)" == "" ];
+if [ "$(ls Images/GIF 2> /dev/null)" == "" ];
 then
     rmdir Images/GIF
 fi
 
-if [ "$(ls -A Images/JPEG 2> /dev/null)" == "" ];
+if [ "$(ls Images/JPEG 2> /dev/null)" == "" ];
 then
     rmdir Images/JPEG
 fi
 
-if [ "$(ls -A Images/JPG 2> /dev/null)" == "" ];
+if [ "$(ls Images/JPG 2> /dev/null)" == "" ];
 then
     rmdir Images/JPG
 fi
 
-if [ "$(ls -A Images/PNG 2> /dev/null)" == "" ];
+if [ "$(ls Images/PNG 2> /dev/null)" == "" ];
 then
     rmdir Images/PNG
 fi
 
-if [ "$(ls -A Images 2> /dev/null)" == "" ];
+if [ "$(ls Images 2> /dev/null)" == "" ];
 then
     rmdir Images
 fi
@@ -137,37 +151,37 @@ mv *.wmv Videos/WMV
 
 # Delete any empty folders related to images folder - delete parent folder last
 # Because it will only ever be empty at the end of deleting all other subfolders
-if [ "$(ls -A Videos/AVI 2> /dev/null)" == "" ];
+if [ "$(ls Videos/AVI 2> /dev/null)" == "" ];
 then
     rmdir Videos/AVI
 fi
 
-if [ "$(ls -A Videos/FLV 2> /dev/null)" == "" ];
+if [ "$(ls Videos/FLV 2> /dev/null)" == "" ];
 then
     rmdir Videos/FLV
 fi
 
-if [ "$(ls -A Videos/MP4 2> /dev/null)" == "" ];
+if [ "$(ls Videos/MP4 2> /dev/null)" == "" ];
 then
     rmdir Videos/MP4
 fi
 
-if [ "$(ls -A Videos/MPEG 2> /dev/null)" == "" ];
+if [ "$(ls Videos/MPEG 2> /dev/null)" == "" ];
 then
     rmdir Videos/MPEG
 fi
 
-if [ "$(ls -A Videos/MOV 2> /dev/null)" == "" ];
+if [ "$(ls Videos/MOV 2> /dev/null)" == "" ];
 then
     rmdir Videos/MOV
 fi
 
-if [ "$(ls -A Videos/WMV 2> /dev/null)" == "" ];
+if [ "$(ls Videos/WMV 2> /dev/null)" == "" ];
 then
     rmdir Videos/WMV
 fi
 
-if [ "$(ls -A Videos 2> /dev/null)" == "" ];
+if [ "$(ls Videos 2> /dev/null)" == "" ];
 then
     rmdir Videos
 fi
@@ -176,7 +190,7 @@ fi
 mkdir Miscellaneous
 
 # Delete Miscellaneous folder
-if [ "$(ls -A Miscellaneous 2> /dev/null)" == "" ];
+if [ "$(ls Miscellaneous 2> /dev/null)" == "" ];
 then
     rmdir Miscellaneous
 fi
