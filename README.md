@@ -3,34 +3,12 @@ A small script that I wrote awhile ago and recently started adding to again.  Pl
 
 Currently supported file types:
 
-Audio:
--AIFF
--FLAC
--M4A
--MP3
--WAVE
+Audio: AIFF, FLAC, M4A, MP3, WAVE
 
-Documents:
--DOC
--DOCX
--HTML
--PDF
--RTF
--TXT
+Documents: DOC, DOCX, HTML, PDF, RTF, TXT
 
-Images:
--GIF
--JPEG
--JPG
--Pixelmator
--PNG
+Images: GIF, JPEG, JPG, Pixelmator, PNG
 
-Videos:
--AVI
--FLV
--MP4
--MPEG
--MOV
--WMV
+Videos: AVI, FLV, MP4, MPEG, MOV, WMV
 
 Zip
