@@ -14,7 +14,7 @@ mkdir Audio/WAVE
 mv *.mp3 Audio/MP3
 mv *.wav Audio/WAVE
 
-# Delete any empty folders in to audio folder - delete parent folder last
+# Delete any empty folders related to audio folder - delete parent folder last
 # Because it will only ever be empty at the end of deleting all other subfolders
 if [ "$(ls -A Audio/MP3 2> /dev/null)" == "" ];
 then
@@ -46,7 +46,7 @@ mv *.html Documents/HTML
 mv *.rtf Documents/RTF
 mv *.txt Documents/TXT
 
-# Delete any empty folders in to documents folder - delete parent folder last
+# Delete any empty folders related to documents folder - delete parent folder last
 # Because it will only ever be empty at the end of deleting all other subfolders
 if [ "$(ls -A Documents/DOC 2> /dev/null)" == "" ];
 then
@@ -91,7 +91,7 @@ mv *.jpeg Images/JPEG
 mv *.jpg Images/JPG
 mv *.png Images/PNG
 
-# Delete any empty folders in to images folder - delete parent folder last
+# Delete any empty folders related to images folder - delete parent folder last
 # Because it will only ever be empty at the end of deleting all other subfolders
 if [ "$(ls -A Images/GIF 2> /dev/null)" == "" ];
 then
@@ -135,8 +135,51 @@ mv *.mpeg Videos/MPEG
 mv *.mov Videos/MOV
 mv *.wmv Videos/WMV
 
+# Delete any empty folders related to images folder - delete parent folder last
+# Because it will only ever be empty at the end of deleting all other subfolders
+if [ "$(ls -A Videos/AVI 2> /dev/null)" == "" ];
+then
+    rmdir Videos/AVI
+fi
+
+if [ "$(ls -A Videos/FLV 2> /dev/null)" == "" ];
+then
+    rmdir Videos/FLV
+fi
+
+if [ "$(ls -A Videos/MP4 2> /dev/null)" == "" ];
+then
+    rmdir Videos/MP4
+fi
+
+if [ "$(ls -A Videos/MPEG 2> /dev/null)" == "" ];
+then
+    rmdir Videos/MPEG
+fi
+
+if [ "$(ls -A Videos/MOV 2> /dev/null)" == "" ];
+then
+    rmdir Videos/MOV
+fi
+
+if [ "$(ls -A Videos/WMV 2> /dev/null)" == "" ];
+then
+    rmdir Videos/WMV
+fi
+
+if [ "$(ls -A Videos 2> /dev/null)" == "" ];
+then
+    rmdir Videos
+fi
+
 # Make folder for Miscellaneous
 mkdir Miscellaneous
+
+# Delete Miscellaneous folder
+if [ "$(ls -A Miscellaneous 2> /dev/null)" == "" ];
+then
+    rmdir Miscellaneous
+fi
 
 # Move rest of items to Miscellaneous Folder
 #mv *.* Miscellaneous
