@@ -7,16 +7,20 @@
 # Make folders for documents
 mkdir Documents
 mkdir Documents/DOC
+mkdir Documents/DOCX
 mkdir Documents/HTML
 mkdir Documents/RTF
 mkdir Documents/TXT
 
-
 # Move all docs to Documents Folder
-mv *.txt Documents/DOC
-mv *.rtf Documents/HTML
-mv *.doc Documents/RTF
-mv *.html Documents/TXT
+mv *.doc Documents/DOC
+mv *.docx Documents/DOCX
+mv *.html Documents/HTML
+mv *.rtf Documents/RTF
+mv *.txt Documents/TXT
+
+# Delete any empty folders
+
 
 # Make folders for images
 mkdir Images
@@ -41,12 +45,12 @@ mkdir Videos/MOV
 mkdir Videos/WMV
 
 # Move all videos to folder - Split up files into specific file extension folders?
-mv *.AVI Videos/AVI
-mv *.FLV Videos/FLV
-mv *.MP4 Videos/MP4
-mv *.MPEG Videos/MPEG
-mv *.MOV Videos/MOV
-mv *.WMV Videos/WMV
+mv *.avi Videos/AVI
+mv *.flv Videos/FLV
+mv *.mp4 Videos/MP4
+mv *.mpeg Videos/MPEG
+mv *.mov Videos/MOV
+mv *.wmv Videos/WMV
 
 # misc
 mkdir Miscellaneous
