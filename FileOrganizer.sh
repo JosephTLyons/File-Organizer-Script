@@ -55,6 +55,7 @@ mkdir Documents
 mkdir Documents/DOC
 mkdir Documents/DOCX
 mkdir Documents/HTML
+mkdir Documents/PDF
 mkdir Documents/RTF
 mkdir Documents/TXT
 
@@ -62,6 +63,7 @@ mkdir Documents/TXT
 mv *.doc Documents/DOC
 mv *.docx Documents/DOCX
 mv *.html Documents/HTML
+mv *.pdf Documents/PDF
 mv *.rtf Documents/RTF
 mv *.txt Documents/TXT
 
@@ -80,6 +82,11 @@ fi
 if [ "$(ls Documents/HTML 2> /dev/null)" == "" ];
 then
     rmdir Documents/HTML
+fi
+
+if [ "$(ls Documents/PDF 2> /dev/null)" == "" ];
+then
+    rmdir Documents/PDF
 fi
 
 if [ "$(ls Documents/RTF 2> /dev/null)" == "" ];
